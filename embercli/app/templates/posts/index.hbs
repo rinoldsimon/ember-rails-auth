@@ -1,0 +1,50 @@
+<h3>Posts list</h3>
+
+<p>
+  {{link-to "New Post" "posts.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Title
+        </th>
+        <th>
+          Body
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |post|}}
+        <tr>
+          <td>
+            {{post.title}}
+          </td>
+          <td>
+            {{post.body}}
+          </td>
+          <td>
+            {{link-to "Edit" "posts.edit" post tagName='button'}}
+          </td>
+          <td>
+            {{!link-to "Show" "posts.show" post tagName='button'}}
+            {{#link-to 'posts.show' post tagName='button'}}Show{{/link-to}}
+          </td>
+          <td>
+            {{!-- <a href="#" {{action "remove" post}}>Remove</a> --}}
+            <button {{action 'remove' post}}>Remove</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Posts found
+  </p>
+{{/if}}

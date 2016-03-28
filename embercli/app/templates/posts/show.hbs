@@ -1,0 +1,36 @@
+<h3>Post show</h3>
+<p>
+  {{link-to "Post list" "posts.index" }}
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <span>{{model.title}}</span>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <span>{{model.body}}</span>
+</p>
+
+<p>
+  <strong>Comments( {{model.comments.length}} ):</strong>
+  {{!#each comment in model.comments }}
+  {{#each model.comments as |comment|}}
+    <p>
+      <em>{{comment.author}} said:</em>
+      <span>{{comment.body}}</span>
+
+      {{link-to 'Edit Comment' 'posts-comments.edit' model.id comment.id }}
+      {{!link-to 'Edit Comment' 'posts-comments.edit' model.id comment.id tagName='button'}}
+      <button {{action 'deleteComment' comment}}>Delete Comment</button>
+    </p>
+  {{/each}}
+</p>
+
+<p>
+  {{link-to 'Add comment' 'posts-comments.new' model.id}}
+  {{!link-to "Add comment" "posts-comments.new" model.id}}
+  {{!-- {{#link-to 'posts-comments.new' }}Add comment{{/link-to}} --}}
+  {{!-- {{#link-to 'posts-comments.new' model.id}}Add comment{{/link-to}} --}}
+</p>
