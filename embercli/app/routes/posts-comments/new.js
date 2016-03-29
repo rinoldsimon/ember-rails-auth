@@ -3,10 +3,12 @@
 
 // export default Ember.Route.extend(SaveModelMixin, {
 //   model: function() {
-//     return this.store.createRecord('comment');
+//     return this.store.createRecord('comment', this.currentModel);
+//   },
+//   renderTemplate() {
+//     this.render('posts-comments.new', { into: 'application' });
 //   }
 // });
-
 
 import Ember from 'ember';
 
