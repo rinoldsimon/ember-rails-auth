@@ -14,6 +14,14 @@ export default Ember.Route.extend({
       if(confirm('Are you sure?')) {
         model.destroyRecord();
       }
+    },
+    save: function() {
+      var route = this;
+      this.currentModel.save().then(function() {
+        route.transitionTo('posts');
+      }, function() {
+        console.log('Failed to save the model');
+      });
     }
   }
 });

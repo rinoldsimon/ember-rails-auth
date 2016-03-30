@@ -23,10 +23,22 @@
       {{#each model as |post|}}
         <tr>
           <td>
-            {{post.title}}
+            {{!post.title}}
+            {{
+              ember-inplace-edit
+              text=post.title
+              value=post.title
+              action="save"
+            }}
           </td>
           <td>
-            {{post.body}}
+            {{!post.body}}
+            {{
+              ember-inplace-edit
+              text=post.body
+              value=post.body
+              action="save"
+            }}
           </td>
           <td>
             {{link-to "Edit" "posts.edit" post tagName='button'}}
