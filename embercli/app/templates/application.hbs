@@ -1,3 +1,29 @@
-<h2 id="title">CRUD</h2>
+<div class="row">
 
-{{outlet}}
+ <div class="col s12">
+  <nav class="red darken-2">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">&nbsp;&nbsp;&nbsp;Medzbook</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="posts">Post</a></li>
+        <li><a href="#">Foo&nbsp;</a></li>
+      </ul>
+    </div>
+  </nav>
+ </div>
+
+ <div class="col s3">
+   <div class="card-panel">
+   </div>
+ </div>
+
+ <div class="col s9">
+   <div class="card-panel">
+     {{outlet}}
+   </div>
+ </div>
+
+</div>
+
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}

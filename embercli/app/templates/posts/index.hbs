@@ -1,7 +1,7 @@
 <h3>Posts list</h3>
 
 <p>
-  {{link-to "New Post" "posts.new" }}
+  {{link-to "New Post" "posts.new" class='btn red darken-2'}}
 </p>
 
 {{#if model.length}}
@@ -41,15 +41,15 @@
             }}
           </td>
           <td>
-            {{link-to "Edit" "posts.edit" post tagName='button'}}
+            {{link-to "Edit" "posts.edit" post class='btn red darken-2'}}
           </td>
           <td>
             {{!link-to "Show" "posts.show" post tagName='button'}}
-            {{#link-to 'posts.show' post tagName='button'}}Show{{/link-to}}
+            {{#link-to 'posts.show' post class='btn red darken-2'}}Show{{/link-to}}
           </td>
           <td>
             {{!-- <a href="#" {{action "remove" post}}>Remove</a> --}}
-            <button {{action 'remove' post}}>Remove</button>
+            <button class="btn red darken-2" {{action 'remove' post}}>Remove</button>
           </td>
         </tr>
       {{/each}}
