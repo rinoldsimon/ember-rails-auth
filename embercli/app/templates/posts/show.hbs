@@ -20,10 +20,13 @@
     <p>
       <em>{{comment.author}} said:</em>
       <span>{{comment.body}}</span>
-
-      {{link-to 'Edit Comment' 'posts-comments.edit' model.id comment.id class='btn red darken-2'}}
+      
+      {{#link-to 'posts-comments.edit' model.id comment.id class='btn-floating red darken-2'}}<i class="material-icons">edit</i>{{/link-to}}
+      {{!-- {{link-to 'Edit Comment' 'posts-comments.edit' model.id comment.id class='btn red darken-2'}} --}}
       {{!link-to 'Edit Comment' 'posts-comments.edit' model.id comment.id tagName='button'}}
-      <button class='btn red darken-2' {{action 'deleteComment' comment}}>Delete Comment</button>
+
+      <button class="btn-floating red darken-2" {{action 'deleteComment' comment}}><i class="material-icons">delete</i></button>
+      {{!-- <button class='btn red darken-2' {{action 'deleteComment' comment}}>Delete Comment</button> --}}
     </p>
   {{/each}}
 </p>

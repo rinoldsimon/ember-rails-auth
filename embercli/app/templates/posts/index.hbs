@@ -1,7 +1,9 @@
 <h3>Posts list</h3>
 
 <p>
-  {{link-to "New Post" "posts.new" class='btn red darken-2'}}
+  {{!-- {{link-to "New Post" "posts.new" class='btn red darken-2'}} --}}
+  {{!-- {{#link-to 'posts.new' class='btn red darken-2'}}<i class="material-icons left">add</i>New Post{{/link-to}} --}}
+  {{#link-to 'posts.new' class='btn red darken-2'}}<i class="material-icons">add</i>{{/link-to}}
 </p>
 
 {{#if model.length}}
@@ -41,15 +43,17 @@
             }}
           </td>
           <td>
-            {{link-to "Edit" "posts.edit" post class='btn red darken-2'}}
-          </td>
-          <td>
+            {{#link-to 'posts.edit' post class='btn-floating red darken-2'}}<i class="material-icons">edit</i>{{/link-to}}
+            {{!link-to "Edit" "posts.edit" post class='btn red darken-2'}}
+          
+            {{#link-to 'posts.show' post class='btn-floating red darken-2'}}<i class="material-icons">launch</i>{{/link-to}}
+            {{!-- {{#link-to 'posts.show' post class='btn-floating red darken-2'}}Show{{/link-to}} --}}
             {{!link-to "Show" "posts.show" post tagName='button'}}
-            {{#link-to 'posts.show' post class='btn red darken-2'}}Show{{/link-to}}
-          </td>
-          <td>
+          
+            <a class="btn-floating red darken-2" {{action 'remove' post}}><i class="material-icons">delete</i></a>
+            {{!-- <i class="material-icons btn" {{action 'remove' post}}>delete</i> --}}
             {{!-- <a href="#" {{action "remove" post}}>Remove</a> --}}
-            <button class="btn red darken-2" {{action 'remove' post}}>Remove</button>
+            {{!-- <button class="btn red darken-2" {{action 'remove' post}}>Remove</button> --}}
           </td>
         </tr>
       {{/each}}
