@@ -1,4 +1,4 @@
-<form>
+{{!-- <form>
   <div>
     <label>Author:</label>
     {{input type="text" value=model.author}}
@@ -9,6 +9,22 @@
   </div>
   <div>
     <button class='btn red darken-2' {{action 'save'}}>Save</button>
+    <button class='btn red darken-2' {{action 'cancel'}}>Cancel</button>
+  </div>
+</form> --}}
+
+<form {{action "save" on="submit"}}>
+  <div>
+    <label> Author </label>
+      {{input type="text" value=model.author}} 
+  </div>
+  <div>
+    <label> Body </label>
+      {{!input type="text" value=model.body}}
+      {{textarea rows="5" value=model.body}}
+  </div>
+  <div>
+    <input class='btn red darken-2' type="submit" value="Save">
     <button class='btn red darken-2' {{action 'cancel'}}>Cancel</button>
   </div>
 </form>
