@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'sessions' }
+  mount_devise_token_auth_for 'User', at: 'users'
   resources :comments, except: [:new, :edit]
   resources :posts, except: [:new, :edit]
   # The priority is based upon order of creation: first created -> highest priority.

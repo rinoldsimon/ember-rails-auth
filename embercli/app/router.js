@@ -43,6 +43,8 @@ Router.map(function() {
   //   this.route('comment.new', { path: 'posts-comments/new' });
   //   this.route('comment.edit', { path: 'posts-comments/edit' });
   // });
+  this.route('protected');
+  this.route('login');
 });
 
 export default Router;
