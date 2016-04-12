@@ -14,7 +14,7 @@
         <li>
           {{#if session.isAuthenticated}}
             {{#link-to 'protected'}}Protected{{/link-to}}
-            <button {{action 'invalidateSession'}}>Logout</button>
+            <a {{action 'invalidateSession'}}>Logout</a>
           {{else}}
             {{#link-to 'login'}}Login{{/link-to}}
           {{/if}}
