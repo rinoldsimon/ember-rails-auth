@@ -19,7 +19,18 @@ module.exports = function(environment) {
     },
     sassOptions: {
       includePaths: ['bower_components/materialize/sass']
+    },
+
+    contentSecurityPolicy: {
+     'connect-src': "*",
+     'style-src': "*",
+     'font-src': "*"
     }
+  };
+
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'posts',
+    routeIfAlreadyAuthenticated: 'posts'
   };
 
   if (environment === 'development') {
