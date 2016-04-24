@@ -10,13 +10,14 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">&nbsp;&nbsp;&nbsp;Medzbook</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>{{#link-to 'posts'}}Post{{/link-to}}</li>
         <li>
           {{#if session.isAuthenticated}}
             {{#link-to 'protected'}}Protected{{/link-to}}
+            {{#link-to 'posts'}}Post{{/link-to}}
             <a {{action 'logout'}}>Logout</a>
           {{else}}
             {{#link-to 'login'}}Login{{/link-to}}
+            {{#link-to 'signup'}}Signup{{/link-to}}
           {{/if}}
         &nbsp;</li>
       </ul>

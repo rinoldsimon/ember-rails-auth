@@ -1,0 +1,13 @@
+<form {{action "save" on="submit"}}>
+  <label for="email">Email</label>
+  {{input value=user.email placeholder="Enter Email"}}
+  <label for="password">Password</label>
+  {{input value=user.password type="password" placeholder="Enter Password"}}
+  <label for="password_confirmation">Password Confirmation</label>
+  {{input value=user.password_confirmation type="password" placeholder="Enter Password Again"}}
+  <button class="btn red darken-2" type="submit">Signup</button>
+</form>
+
+{{#if errorMessage}}
+  {{errorMessage}}
+{{/if}}

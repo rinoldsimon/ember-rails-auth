@@ -259,4 +259,8 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  ActionController::Responder.class_eval do
+    alias :to_mobile :to_html
+  end
 end
