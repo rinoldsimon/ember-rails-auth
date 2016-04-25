@@ -1,15 +1,11 @@
 import Ember from 'ember';
+const { service } = Ember.inject;
 export default Ember.Component.extend({
-  session: Ember.inject.service('session'),
+  session: service('session'),
   actions: {
-    save(){
+    submit(){
       let user = this.get('user');
-      user.save().catch((reason) => {
-        this.set('errorMessage', reason.error || reason);
-      }).then(()=>{this.get('session').authenticate('authenticator:devise', user.get('email'), user.get('password')).catch((reason) => {
-          this.set('errorMessage', reason.error || reason);
-        });
-      });
+      this.attrs.triggerSave(user);
     }
   }
 });
